@@ -17,7 +17,7 @@ def plot_predictions(train_data, train_labels,  test_data, test_labels,  predict
   # Plot the predictions in red (predictions were made on the test data)
   plt.scatter(test_data, predictions, c="r", label="Predictions")
   # Show the legend
-  plt.legend(shadow='True')
+  plt.legend(shadow=True)
   # Set grids
   plt.grid(which='major', c='#cccccc', linestyle='--', alpha=0.5)
   # Some text
@@ -61,11 +61,9 @@ X_test = X[40:] # last 10 examples (20% of data)
 y_test = y[40:]
 
 
-# Take a single example of X
-input_shape = X[0].shape 
-
-# Take a single example of y
-output_shape = y[0].shape
+# **Reshape X_train and X_test**
+X_train = X_train.reshape(-1, 1)
+X_test = X_test.reshape(-1, 1)
 
 
 # Set random seed
